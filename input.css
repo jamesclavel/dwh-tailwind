@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.thisbox {
+    border: 1px solid #F00;
+}
