@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.thisbox {
+.bx {
     border: 1px solid #F00;
 }

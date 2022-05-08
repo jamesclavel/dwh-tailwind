@@ -5,47 +5,185 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Learning TailwindCSS</title>
+    <title>Davao.Web.Hosting - No Fuzz Web Hosting!</title>
 </head>
 <body>
-    <header class="container mx-auto py-2">
+    <header class="relative container mx-auto py-2">
         <div class="flex flex-row justify-between">
             <div class="flex-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-gray-500 ml-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
             </div>
-            <div class="flex space-x-7 items-center justify-center">
+            <div class="hidden space-x-7 items-center justify-end md:flex md:flex-auto md:pr-7">
                 <a href="#" class="text-gray-600 hover:text-gray-400">Home</a>
                 <a href="#" class="text-gray-600 hover:text-gray-400">Pricing</a>
-                <a href="#" class="text-gray-600 hover:text-gray-400">Services</a>
+                <div x-data="{open:false}" @mouseleave="open=false" class="relative py-3">
+                    <a @mouseover="open=true" href="#" class="flex flex-row items-center space-x-1 hover:text-gray-400">Services <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg></a>
+                    <!-- dropdown menu -->
+                    <div x-show="open"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform scale-90"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-90"
+                        class="absolute right-0 w-72 py-2 mt-3 bg-white rounded-md shadow-xl border border-t-2 border-slate-100">
+                        <a href="#"
+                            class="block px-4 py-3 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-left mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
+                              </svg> Domain Name Registration
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-3 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-left mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                              </svg> Web Hosting (VPS)
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-3 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-left mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
+                              </svg> Website Migration
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-3 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-left mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
+                              </svg> Email Migration
+                        </a>
+                    </div>
+                </div>
                 <a href="#" class="text-gray-600 hover:text-gray-400">About Us</a>
                 <a href="#" class="text-gray-600 hover:text-gray-400">Contact Us</a>
             </div>
-            <div class="flex items-center justify-center">
+            <div class="hidden items-center justify-center md:flex">
                 <a href="#" class="bg-slate-400 text-white rounded-full px-4 p-2.5 uppercase shadow-md">Get Started</a>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero" class="container mx-auto">
         <div class="flex flex-col md:flex-row">
-            <div class="flex flex-col items-center justify-center px-6 pt-6 md:w-1/2">
-                <img class="mb-5 flex-1 md:w-5/6" src="images/undraw_usability_testing_re_uu1g.svg" alt="" srcset="" />
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vestibulum arcu id tempus. Proin eget enim dui. Proin eu odio ac mauris viverra pharetra a quis orci. Nulla vel nisl non neque eleifend accumsan in id lorem. Aenean lacinia placerat sapien viverra molestie. Nulla cursus venenatis libero sodales venenatis. Aliquam in libero risus. Nulla vitae felis dolor. Integer sagittis, felis in volutpat commodo, lectus felis dapibus magna, et euismod diam tellus quis ex. </p>
+            <div class="flex flex-col md:flex-row items-top justify-center px-6 pt-6 space-x-0 md:space-x-8">
+                <div class="md:w-1/2">
+                    <img class="mb-5" src="images/undraw_building_websites_i78t.svg" alt="" srcset="" />
+                </div>
+                <div class="md:w-1/2">
+                    <h1 class="text-center text-3xl font-bold text-slate-400 mb-5 md:text-left md:text-4xl">No fuzz <span class="text-slate-600">Web Hosting</span>. It just works!</h1>
+                    <p class="mb-3 text-gray-500">Even our website is so simple that it is almost like it's from the early 2000s.</p>
+                    <p class="mb-5 text-gray-500">We focus more on making your website accessible 24/7/365. We know you'll probably be visiting our website once or twice, but your experience with us will be extra-ordinary. We give ephasis in our <span class="font-semibold">Awesome Support</span> - nothing compares.</p>
+
+                    <p class="">
+                        <a href="#" class="flex w-40 items-center bg-slate-200 p-3 px-6 rounded-full text-slate-500 drop-shadow-md border border-slate-300 hover:bg-slate-300 hover:text-slate-700 hover:border-slate-400">
+                            <span class="mr-1">Learn More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg> 
+                        </a>
+                    </p>
+
+                </div>
+                
             </div>
-            <div class="px-6 pt-6 md:w-1/2">
+            <!-- <div class="px-6 pt-6 md:w-1/2">
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vestibulum arcu id tempus. Proin eget enim dui. Proin eu odio ac mauris viverra pharetra a quis orci. Nulla vel nisl non neque eleifend accumsan in id lorem. Aenean lacinia placerat sapien viverra molestie. Nulla cursus venenatis libero sodales venenatis. Aliquam in libero risus. Nulla vitae felis dolor. Integer sagittis, felis in volutpat commodo, lectus felis dapibus magna, et euismod diam tellus quis ex. </p>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="intro" class="mt-10 bg-slate-50 py-6 md:py-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-slate-400 text-center text-lg md:text-3xl font-semibold mb-5">How <span class="text-slate-600">Davao.Web.Hosting</span> Started...</h3>
+
+            <div class="flex flex-col-reverse items-center md:flex-row space-x-6">
+                <div class="md:w-7/12 text-gray-500">
+                    <p class="mb-3">
+                         The year is 2014, when <span class="text-slate-600 font-semibold">"co-working space"</span> is still new in the city. I joined a group of individuals to start one. The group has different skills set and my part is to setup the space for internet connection sharing and manage the group's website.
+                    </p>
+                    <p class="mb-3">At the same time, I started <span class="text-slate-600 font-semibold">Davao.Web.Hosting</span> as a pet project and the group's concept was the first client. Although the idea was good, the "co-working space" didn't live long. On the other hand, <span class="text-slate-600 font-bold">DWH</span> has gained more supporters and I focused more in providing quick resolution for support requests and prompt response when clients have questions. A pet-project run by a web-developer for web-developers and the likes.</p>
+                    <p class="mb-3">We started with Reseller Hosting back in 2014, fast-forward to 2022 we will be providing web-hosting solution using VPS <span class="italic">(virtual-private-server)</span> using <span class="font-semibold">OpenSource</span> Technologies.</p>
+                </div>
+                <div class="md:w-5/12">
+                    <img class="mb-6" src="images/undraw_content_team_re_4q47.svg" alt="" srcset="">
+                </div>
             </div>
         </div>
     </section>
 
-    <nav class="bg-slate-200 flex">
-        <div class="bg-slate-400 flex-initial px-5 py-5 text-center">one</div>
-        <div class="bg-slate-500 flex-none w-64">two</div>
-        <div class="bg-slate-600 flex-none w-32 hover:flex-1">three</div>
-    </nav>
+    <!-- Services -->
+    <section id="services" class="py-6 md:py-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-slate-400 text-center text-lg md:text-3xl font-semibold md:mb-5">Our Services</h3>
+
+            <div class="flex flex-col items-top justify-center pt-6 space-x-0 space-y-6 md:flex-row md:space-x-8 md:space-y-0">
+                <div class="flex rounded-lg shadow-lg p-5 border-t w-full md:w-1/2">
+                    <div class="flex items-top text-gray-500 md:flex-row">
+                        <div class="flex-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
+                              </svg>
+                        </div>
+                          <div>
+                              <h4 class="text-xl font-medium mb-3">Domain Registration</h4>
+                              <p class="mb-3 text-gray-400 font-light">Getting the right domain name for your website is crucial when it comes to memory recall. It must be simple, easy to remember and catchy at the same time.Once you have the perfect domain name, we can register it in your behalf.</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="flex rounded-lg shadow-lg p-5 border-t w-full md:w-1/2">
+                    <div class="flex items-top text-gray-500 md:flex-row">
+                        <div class="flex-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 float-left mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                              </svg>
+                        </div>
+                          <div>
+                              <h4 class="text-xl font-medium mb-3">Web Hosting</h4>
+                              <p class="mb-3 text-gray-400 font-light flex-1">You can focus on your content, we'll handle the heavy lifting of setting up your <span class="font-semibold">VPS</span>. In the past, we used shared-hosting solution - but why share your resources when you can have scalability power using Virtual Private Servers.</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col items-top justify-center pt-6 space-x-0 space-y-6 md:flex-row md:space-x-8 md:space-y-0">
+                <div class="flex rounded-lg shadow-lg p-5 border-t w-full md:w-1/2">
+                    <div class="flex items-top text-gray-500 md:flex-row">
+                        <div class="flex-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 float-left mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
+                              </svg>
+                        </div>
+                          <div>
+                              <h4 class="text-xl font-medium mb-3">Website Migration</h4>
+                              <p class="mb-3 text-gray-400 font-light">Sometimes, we're not happy anymore with our current web hosting provider and wanted to move on. If you're moving in to <span class="font-semibold">DWH</span>, we can definitely help you with that! From domain transfer to web and database migration - we are here to provide assistance.</p>
+                              <p class="text-xs text-gray-400 font-light italic">The same goes if you're moving away from us - no hard feelings.</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="flex rounded-lg shadow-lg p-5 border-t w-full md:w-1/2">
+                    <div class="flex items-top text-gray-500 md:flex-row">
+                        <div class="flex-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 float-left mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
+                              </svg>
+                        </div>
+                          <div>
+                              <h4 class="text-xl font-medium mb-3">Email Migration</h4>
+                              <p class="mb-3 text-gray-400 font-light flex-1">Does your website have multiple email addresses setup to it and you're planning to move-in with <span class="font-semibold">DWH</span>? Worry no more, we got you covered! We'll assess the scope of the migration process and <span class="italic">maybe</span> we can do it for <span class="font-semibold">FREE</span>.</p>
+                              <p class="text-xs text-gray-400 font-light italic">Email requirements getting bigger? Having plans to subscribe in <a href="https://workspace.google.com/intl/en_ph/"><span class="font-semibold text-sky-600 text-opacity-50">Google WorkSpace</span></a> service? Send us a message.</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AlpineJS -->
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
 </body>
 </html>
